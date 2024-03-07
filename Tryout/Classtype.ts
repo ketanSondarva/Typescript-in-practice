@@ -29,7 +29,7 @@ class Gadget implements Products {
 const gadget: Products = new Gadget();
 
 // creating variable to hold return value of displayProductName function
-const productName: string = gadget.displayProductName(101);
+const prodName: string = gadget.displayProductName(101);
 
 // line to populate Product name on console
-console.log(productName);
+console.log(prodName);

@@ -24,7 +24,33 @@ if(PinkGold) PinkGold.innerText += ColorPrice.pg;
 if(SilverTitanium) SilverTitanium.innerText += ColorPrice.st;
 
 
-const products: any [] = [
+// before learning the interface concepts:
+// the type of array will be 'any'
+// const products: any [] = [
+//     {pId:432,productName:"Samsung Galaxy Note 7",productPrice:699,productAvailable:true,imageUrl:"SamsungGalaxy_Gold.jpg",
+//     productDescription:"Samsung Galaxy Note 7 is a stylish mobile you can ever have. It has 64GB memory."},
+
+//     {pId:433,productName:"Samsung Galaxy S6 Edge",productPrice:630,productAvailable:true,imageUrl:"SamsungGalaxy_Gold.jpg",
+//     productDescription:"Samsung Galaxy S6 Edge is a stylish mobile you can ever have. It has 64GB memory."},
+
+//     {pId:434,productName:"Nokia Lumia 640XL",productPrice:223,productAvailable:false,imageUrl:"SamsungGalaxy_Gold.jpg",
+//     productDescription:"Nokia Lumia 640XL is a stylish mobile you can ever have. It has 64GB memory."}
+// ];
+
+
+
+// after learning the interface concepts:
+interface product {
+    pId: number;
+    productName: string;
+    productPrice: number;
+    productAvailable: boolean;
+    imageUrl: string;
+    productDescription: string;
+}
+
+// type of array will be product(interface)
+const products: product [] = [
     {pId:432,productName:"Samsung Galaxy Note 7",productPrice:699,productAvailable:true,imageUrl:"SamsungGalaxy_Gold.jpg",
     productDescription:"Samsung Galaxy Note 7 is a stylish mobile you can ever have. It has 64GB memory."},
 
