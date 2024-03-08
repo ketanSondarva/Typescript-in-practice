@@ -1,3 +1,5 @@
+/// <reference path="./namespace_product.ts">
+
 const productName: string = "Samsung Galaxy Note 7";
 const productPrice: number = 699;
 const productStatus: string = "Available";
@@ -40,14 +42,14 @@ if(SilverTitanium) SilverTitanium.innerText += ColorPrice.st;
 
 
 // // after learning the interface concepts:
-interface product {
-    pId: number;
-    productName: string;
-    productPrice: number;
-    productAvailable: boolean;
-    imageUrl: string;
-    productDescription: string;
-}
+// interface product {
+//     pId: number;
+//     productName: string;
+//     productPrice: number;
+//     productAvailable: boolean;
+//     imageUrl: string;
+//     productDescription: string;
+// }
 
 // // type of array will be product(interface)
 // const products: product [] = [
@@ -74,30 +76,15 @@ interface product {
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // above same implementation using the class concepts:
-class $products { // used '$' because class 'products' already defined
-    pId: number;
-    productName: string;
-    productPrice: number;
-    productAvailable: boolean;
-    imageUrl: string;
-    productDescription: string;
 
-    constructor(pId: number, productName: string, productPrice: number, productAvailable: boolean, imageUrl: string, productDescription: string) {
-        this.pId = pId;
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productAvailable = productAvailable;
-        this.imageUrl = imageUrl;
-        this.productDescription = productDescription;
-    }
-} // note: you can also implement the 'product' interface(declared above) in this class !!
+import $product = ProductUtility.$products;
 
-const prod1 = new $products(432,"Samsung Galaxy Note 7",699,true,"SamsungGalaxy_Gold.jpg","Samsung Galaxy Note 7 is a stylish mobile you can ever have. It has 64GB memory.");
-const prod2 = new $products(433,"Samsung Galaxy S6 Edge",630,true,"SamsungGalaxy_Gold.jpg","Samsung Galaxy S6 Edge is a stylish mobile you can ever have. It has 64GB memory.");
-const prod3 = new $products(434,"Nokia Lumia 640XL",223,false,"SamsungGalaxy_Gold.jpg","Nokia Lumia 640XL is a stylish mobile you can ever have. It has 64GB memory.");
+const prod1 = new $product(432,"Samsung Galaxy Note 7",699,true,"SamsungGalaxy_Gold.jpg","Samsung Galaxy Note 7 is a stylish mobile you can ever have. It has 64GB memory.");
+const prod2 = new $product(433,"Samsung Galaxy S6 Edge",630,true,"SamsungGalaxy_Gold.jpg","Samsung Galaxy S6 Edge is a stylish mobile you can ever have. It has 64GB memory.");
+const prod3 = new $product(434,"Nokia Lumia 640XL",223,false,"SamsungGalaxy_Gold.jpg","Nokia Lumia 640XL is a stylish mobile you can ever have. It has 64GB memory.");
 
 
-const $prods : $products [] = [ prod1,prod2,prod3 ];
+const $prods : $product [] = [ prod1,prod2,prod3 ];
 
 for(let i = 0; i < 3; i++) {
     const mobileName = document.getElementById("pName"+i);

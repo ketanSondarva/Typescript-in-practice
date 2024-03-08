@@ -16,3 +16,14 @@
 - intall `ts-node` globally
 - write command: `ts-node filename.ts`
 - output will be generated directly.
+
+## 3. how to compile file when we use Namespace:
+
+- we have created namespace [@namespace_demo.ts](Namespace/namespace_demo.ts)
+- we imported it and used it in [@namespace_import.ts](Namespace/namespace_import.ts)
+- note: ts-node command will not work for namespace_import.ts
+- you have to use:
+  ```
+   tsc --outFile Final.js namespace_demo.ts namespace_import.ts
+   node Final.js
+  ```

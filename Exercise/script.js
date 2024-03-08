@@ -1,3 +1,19 @@
+var ProductUtility;
+(function (ProductUtility) {
+    var $products = /** @class */ (function () {
+        function $products(pId, productName, productPrice, productAvailable, imageUrl, productDescription) {
+            this.pId = pId;
+            this.productName = productName;
+            this.productPrice = productPrice;
+            this.productAvailable = productAvailable;
+            this.imageUrl = imageUrl;
+            this.productDescription = productDescription;
+        }
+        return $products;
+    }());
+    ProductUtility.$products = $products;
+})(ProductUtility || (ProductUtility = {}));
+/// <reference path="./namespace_product.ts">
 var productName = "Samsung Galaxy Note 7";
 var productPrice = 699;
 var productStatus = "Available";
@@ -63,21 +79,12 @@ if (SilverTitanium)
 //     if(mobilePrice) mobilePrice.innerText += products[i].productPrice;
 //     if(availability) availability.innerText += products[i].productAvailable ? "Available" : "Out Of Stock";
 // }
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------
 // above same implementation using the class concepts:
-var $products = /** @class */ (function () {
-    function $products(pId, productName, productPrice, productAvailable, imageUrl, productDescription) {
-        this.pId = pId;
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productAvailable = productAvailable;
-        this.imageUrl = imageUrl;
-        this.productDescription = productDescription;
-    }
-    return $products;
-}());
-var prod1 = new $products(432, "Samsung Galaxy Note 7", 699, true, "SamsungGalaxy_Gold.jpg", "Samsung Galaxy Note 7 is a stylish mobile you can ever have. It has 64GB memory.");
-var prod2 = new $products(433, "Samsung Galaxy S6 Edge", 630, true, "SamsungGalaxy_Gold.jpg", "Samsung Galaxy S6 Edge is a stylish mobile you can ever have. It has 64GB memory.");
-var prod3 = new $products(434, "Nokia Lumia 640XL", 223, false, "SamsungGalaxy_Gold.jpg", "Nokia Lumia 640XL is a stylish mobile you can ever have. It has 64GB memory.");
+var $product = ProductUtility.$products;
+var prod1 = new $product(432, "Samsung Galaxy Note 7", 699, true, "SamsungGalaxy_Gold.jpg", "Samsung Galaxy Note 7 is a stylish mobile you can ever have. It has 64GB memory.");
+var prod2 = new $product(433, "Samsung Galaxy S6 Edge", 630, true, "SamsungGalaxy_Gold.jpg", "Samsung Galaxy S6 Edge is a stylish mobile you can ever have. It has 64GB memory.");
+var prod3 = new $product(434, "Nokia Lumia 640XL", 223, false, "SamsungGalaxy_Gold.jpg", "Nokia Lumia 640XL is a stylish mobile you can ever have. It has 64GB memory.");
 var $prods = [prod1, prod2, prod3];
 for (var i = 0; i < 3; i++) {
     var mobileName = document.getElementById("pName" + i);
@@ -89,6 +96,4 @@ for (var i = 0; i < 3; i++) {
         mobilePrice.innerText += $prods[i].productPrice;
     if (availability)
         availability.innerText += $prods[i].productAvailable ? "Available" : "Out Of Stock";
-}
-function getMobileDetails(mobileName, mobileId) {
 }
