@@ -27,3 +27,11 @@
    tsc --outFile Final.js namespace_demo.ts namespace_import.ts
    node Final.js
   ```
+
+## 4. how to cmopile file when we import Modules:
+
+- Refer to [Exporting.ts](Module/Exporting.ts) and [Importing.ts](Module/Importing.ts)
+- we imported modules emported by the Exporting.js file or:
+- we can directly get output by ts-node cmd or use both(imporing and exporting) file names in tsc cmd:
+- run command: `tsc exporting.ts importing.ts`
+- dont forget to see there differance between export and default export.
